@@ -1,29 +1,26 @@
-const countTotalSalary = function(employees) {
-    const values = Object.values(employees);
-    let total = 0;
+const formatString = function (string) {
+
+  if (string.length > 40) {
+
+    const trimString = `${string.slice(0, 40)}...`;
+      return trimString;
+  }
+  else {
+      return string;
+  }
   
-    for (const value of values) {
-  
-      total += value;
-      
-    }
-    return total;
-  };
-  
-  console.log(countTotalSalary({})); // 0
-  
-  console.log(
-    countTotalSalary({
-      mango: 100,
-      poly: 150,
-      alfred: 80,
-    }),
-  ); // 330
-  
-  console.log(
-    countTotalSalary({
-      kiwi: 200,
-      lux: 50,
-      chelsy: 150,
-    }),
-  ); // 400
+}
+
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// вернется оригинальная строка
+
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// вернется форматированная строка
+
+console.log(formatString('Curabitur ligula sapien.'));
+// вернется оригинальная строка
+
+console.log(
+formatString(
+  'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',));
+// вернется форматированная строка
